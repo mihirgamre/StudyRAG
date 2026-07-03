@@ -19,6 +19,7 @@ export function ChatPage({ token, course, onBack }: ChatPageProps) {
   const streamIdRef = useRef<string | null>(null);
   const pendingTokenRef = useRef('');
   const tokenFrameRef = useRef<number | null>(null);
+  const messageEndRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     async function startConversation() {
@@ -37,6 +38,10 @@ export function ChatPage({ token, course, onBack }: ChatPageProps) {
     };
   }, []);
 
+  useEffect(() => {
+    messageEndRef.current?.scrollIntoView({ block: 'end' });
+  }, [messages]);
+
   function flushPendingTokens() {
     const text = pendingTokenRef.current;
     if (!text) {
@@ -45,7 +50,7 @@ export function ChatPage({ token, course, onBack }: ChatPageProps) {
     pendingTokenRef.current = '';
     setMessages((current) =>
       current.map((message) =>
-        message.id === streamIdRef.current ? { ...message, content: `${message.content}${text}` } : message,
+        message.id === streamIdRef.current ? { ...message, content: `${message.content}${text}`, pending: false } : message,
       ),
     );
   }
@@ -83,6 +88,7 @@ export function ChatPage({ token, course, onBack }: ChatPageProps) {
         role: 'assistant',
         content: '',
         citations: [],
+        pending: true,
       },
     ]);
     setDraft('');
@@ -106,6 +112,7 @@ export function ChatPage({ token, course, onBack }: ChatPageProps) {
                     citations: payload.citations,
                     confidence: payload.confidence,
                     refused: payload.refused,
+                    pending: false,
                   }
                 : message,
             ),
@@ -124,6 +131,7 @@ export function ChatPage({ token, course, onBack }: ChatPageProps) {
                 content: message,
                 confidence: 0,
                 refused: true,
+                pending: false,
               }
             : chatMessage,
         ),
@@ -150,6 +158,7 @@ export function ChatPage({ token, course, onBack }: ChatPageProps) {
         {messages.map((message) => (
           <ChatBubble key={message.id} message={message} />
         ))}
+        <div ref={messageEndRef} />
       </section>
 
       <form className="composer" onSubmit={submit}>

@@ -62,4 +62,18 @@ describe('ChatBubble', () => {
     expect(screen.getByText(/not enough source support/i)).toBeInTheDocument();
     expect(screen.getByText(/not have enough information/i)).toBeInTheDocument();
   });
+
+  it('shows a pending indicator before the first streamed token arrives', () => {
+    const message: Message = {
+      id: 'assistant-pending',
+      role: 'assistant',
+      content: '',
+      citations: [],
+      pending: true,
+    };
+
+    render(<ChatBubble message={message} />);
+
+    expect(screen.getByLabelText('Tutor is preparing a response')).toBeInTheDocument();
+  });
 });

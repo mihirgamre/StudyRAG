@@ -41,6 +41,7 @@ export interface Message {
   citations: Citation[];
   confidence?: number;
   refused?: boolean;
+  pending?: boolean;
 }
 
 export interface StreamFinalPayload {
