@@ -82,7 +82,20 @@ export function ChatPage({ token, course, onBack }: ChatPageProps) {
         },
       });
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Message failed');
+      const message = err instanceof Error ? err.message : 'Message failed';
+      setError(message);
+      setMessages((current) =>
+        current.map((chatMessage) =>
+          chatMessage.id === assistantId
+            ? {
+                ...chatMessage,
+                content: message,
+                confidence: 0,
+                refused: true,
+              }
+            : chatMessage,
+        ),
+      );
     } finally {
       setStreaming(false);
       streamIdRef.current = null;
