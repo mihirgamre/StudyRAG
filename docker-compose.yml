@@ -1,0 +1,46 @@
+services:
+  postgres:
+    image: pgvector/pgvector:pg16
+    container_name: studyrag-postgres
+    environment:
+      POSTGRES_USER: studyrag
+      POSTGRES_PASSWORD: studyrag
+      POSTGRES_DB: studyrag
+    ports:
+      - "55433:5432"
+    volumes:
+      - studyrag-postgres-data:/var/lib/postgresql/data
+      - ./docker/postgres/init:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U studyrag -d studyrag"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      DATABASE_URL: postgresql+psycopg://studyrag:studyrag@postgres:5432/studyrag
+      JWT_SECRET: local-compose-change-me-with-32-plus-bytes
+      STUDYRAG_STORAGE_BACKEND: local
+      STUDYRAG_LOCAL_STORAGE_DIR: /app/.studyrag_storage
+      STUDYRAG_RETRIEVAL_TOP_K: "4"
+      STUDYRAG_MESSAGE_RATE_LIMIT: 30/minute
+      STUDYRAG_CORS_ORIGINS: http://localhost:5173,http://127.0.0.1:5173
+      STUDYRAG_DEMO_ENABLED: "true"
+      STUDYRAG_DEMO_USER_EMAIL: demo@studyrag.local
+      STUDYRAG_SEED_SAMPLE_COURSE_ON_STARTUP: "true"
+      STUDYRAG_ATTACH_SAMPLE_COURSE_ON_REGISTER: "true"
+    ports:
+      - "8000:8000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    volumes:
+      - studyrag-storage:/app/.studyrag_storage
+
+volumes:
+  studyrag-postgres-data:
+  studyrag-storage:

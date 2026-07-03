@@ -1,0 +1,1081 @@
+{
+  "generated_at": "2026-07-03T00:18:35.044804+00:00",
+  "course_name": "StudyRAG Sample Course",
+  "ragas_version": "0.4.3",
+  "confidence_threshold": 0.2,
+  "top_k": 4,
+  "metric_notes": {
+    "faithfulness": "Deterministic local proxy: answer facts must be grounded in retrieved contexts, refusals score when expected.",
+    "answer_relevancy": "Deterministic local token-F1 against the handwritten reference answer.",
+    "context_precision": "Ragas ID-based context precision when available, using expected chunk ids from the golden set.",
+    "context_recall": "Ragas ID-based context recall when available, using expected chunk ids from the golden set."
+  },
+  "summary": {
+    "total_examples": 32,
+    "answerable_examples": 28,
+    "refusal_examples": 4,
+    "faithfulness": 1.0,
+    "answer_relevancy": 0.7768290796437018,
+    "context_precision": 0.3898809523809524,
+    "context_recall": 1.0,
+    "refusal_precision": 1.0,
+    "refusal_recall": 1.0
+  },
+  "rows": [
+    {
+      "id": "rr-01",
+      "question": "What are related rates problems about?",
+      "reference_answer": "Related rates problems connect quantities that change with time.",
+      "answer": "Related Rates\nRelated rates problems connect quantities that change with time. [source 1] Related Rates Example\nFor a ladder sliding down a wall, use x^2 + y^2 = L^2 where L is constant. [source 2]",
+      "should_refuse": false,
+      "refused": false,
+      "confidence": 0.6,
+      "expected_source_headings": [
+        "Related Rates"
+      ],
+      "retrieved_headings": [
+        "Related Rates",
+        "Related Rates Example",
+        "Recursive Java Methods"
+      ],
+      "retrieved_contexts": [
+        "Related Rates\nRelated rates problems connect quantities that change with time. Before differentiating, draw a diagram, label variables, and write an equation that connects the variables. Differentiate both sides of the equation with respect to time, using the chain rule for every quantity that changes. Substitute known values only after differentiating, then solve for the requested rate and include units.",
+        "Related Rates Example\nFor a ladder sliding down a wall, use x^2 + y^2 = L^2 where L is constant. Differentiating gives 2x dx/dt + 2y dy/dt = 0, so the horizontal and vertical rates are linked. A negative dy/dt means the top of the ladder is moving downward.",
+        "Recursive Java Methods\nA recursive Java method solves a problem by calling itself on a smaller input. Every recursive method needs a base case that returns without making another recursive call. The recursive case must move the input toward the base case so the call chain eventually stops. Stack frames store each unfinished call, so deep recursion can cause a stack overflow."
+      ],
+      "retrieved_context_ids": [
+        "2cc62c8d-626b-59db-ab36-5819aceb1468",
+        "49b9415f-42bc-5b0c-aacf-7e9f1c1ab32d",
+        "dcde64ac-283e-56b1-b42d-501ba32d7e7d"
+      ],
+      "reference_context_ids": [
+        "2cc62c8d-626b-59db-ab36-5819aceb1468"
+      ],
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.8750000000000001,
+      "context_precision": 1.0,
+      "context_recall": 1.0
+    },
+    {
+      "id": "rr-02",
+      "question": "What should I do before differentiating a related rates equation?",
+      "reference_answer": "Before differentiating, draw a diagram, label variables, and write an equation that connects the variables.",
+      "answer": "Before differentiating, draw a diagram, label variables, and write an equation that connects the variables. [source 1] Related Rates\nRelated rates problems connect quantities that change with time. [source 1]",
+      "should_refuse": false,
+      "refused": false,
+      "confidence": 1.0,
+      "expected_source_headings": [
+        "Related Rates"
+      ],
+      "retrieved_headings": [
+        "Related Rates",
+        "Related Rates Example"
+      ],
+      "retrieved_contexts": [
+        "Related Rates\nRelated rates problems connect quantities that change with time. Before differentiating, draw a diagram, label variables, and write an equation that connects the variables. Differentiate both sides of the equation with respect to time, using the chain rule for every quantity that changes. Substitute known values only after differentiating, then solve for the requested rate and include units.",
+        "Related Rates Example\nFor a ladder sliding down a wall, use x^2 + y^2 = L^2 where L is constant. Differentiating gives 2x dx/dt + 2y dy/dt = 0, so the horizontal and vertical rates are linked. A negative dy/dt means the top of the ladder is moving downward."
+      ],
+      "retrieved_context_ids": [
+        "2cc62c8d-626b-59db-ab36-5819aceb1468",
+        "49b9415f-42bc-5b0c-aacf-7e9f1c1ab32d"
+      ],
+      "reference_context_ids": [
+        "2cc62c8d-626b-59db-ab36-5819aceb1468"
+      ],
+      "faithfulness": 1.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 1.0,
+      "context_recall": 1.0
+    },
+    {
+      "id": "rr-03",
+      "question": "When do I substitute known values in a related rates problem?",
+      "reference_answer": "Substitute known values only after differentiating.",
+      "answer": "Substitute known values only after differentiating, then solve for the requested rate and include units. [source 1] Related Rates\nRelated rates problems connect quantities that change with time. [source 1]",
+      "should_refuse": false,
+      "refused": false,
+      "confidence": 0.90000004,
+      "expected_source_headings": [
+        "Related Rates"
+      ],
+      "retrieved_headings": [
+        "Related Rates",
+        "Related Rates Example",
+        "Recursive Java Methods",
+        "Newton's Method"
+      ],
+      "retrieved_contexts": [
+        "Related Rates\nRelated rates problems connect quantities that change with time. Before differentiating, draw a diagram, label variables, and write an equation that connects the variables. Differentiate both sides of the equation with respect to time, using the chain rule for every quantity that changes. Substitute known values only after differentiating, then solve for the requested rate and include units.",
+        "Related Rates Example\nFor a ladder sliding down a wall, use x^2 + y^2 = L^2 where L is constant. Differentiating gives 2x dx/dt + 2y dy/dt = 0, so the horizontal and vertical rates are linked. A negative dy/dt means the top of the ladder is moving downward.",
+        "Recursive Java Methods\nA recursive Java method solves a problem by calling itself on a smaller input. Every recursive method needs a base case that returns without making another recursive call. The recursive case must move the input toward the base case so the call chain eventually stops. Stack frames store each unfinished call, so deep recursion can cause a stack overflow.",
+        "Newton's Method\nNewton's method approximates a root of f(x) by repeatedly applying x_next = x - f(x) / f'(x). The initial guess should be close enough to the desired root for the tangent-line approximation to be useful. Stop when the change between iterations is below a tolerance or when the function value is close to zero. If f'(x) is zero or nearly zero, the next step can be unstable."
+      ],
+      "retrieved_context_ids": [
+        "2cc62c8d-626b-59db-ab36-5819aceb1468",
+        "49b9415f-42bc-5b0c-aacf-7e9f1c1ab32d",
+        "dcde64ac-283e-56b1-b42d-501ba32d7e7d",
+        "b136700b-a4a0-5d27-b3e9-1086489beab1"
+      ],
+      "reference_context_ids": [
+        "2cc62c8d-626b-59db-ab36-5819aceb1468"
+      ],
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.6666666666666666,
+      "context_precision": 1.0,
+      "context_recall": 1.0
+    },
+    {
+      "id": "rr-04",
+      "question": "What equation models a ladder sliding down a wall?",
+      "reference_answer": "Use x^2 + y^2 = L^2 where L is constant.",
+      "answer": "Related Rates Example\nFor a ladder sliding down a wall, use x^2 + y^2 = L^2 where L is constant. [source 1] A negative dy/dt means the top of the ladder is moving downward. [source 1]",
+      "should_refuse": false,
+      "refused": false,
+      "confidence": 0.4,
+      "expected_source_headings": [
+        "Related Rates Example"
+      ],
+      "retrieved_headings": [
+        "Related Rates Example",
+        "Related Rates"
+      ],
+      "retrieved_contexts": [
+        "Related Rates Example\nFor a ladder sliding down a wall, use x^2 + y^2 = L^2 where L is constant. Differentiating gives 2x dx/dt + 2y dy/dt = 0, so the horizontal and vertical rates are linked. A negative dy/dt means the top of the ladder is moving downward.",
+        "Related Rates\nRelated rates problems connect quantities that change with time. Before differentiating, draw a diagram, label variables, and write an equation that connects the variables. Differentiate both sides of the equation with respect to time, using the chain rule for every quantity that changes. Substitute known values only after differentiating, then solve for the requested rate and include units."
+      ],
+      "retrieved_context_ids": [
+        "49b9415f-42bc-5b0c-aacf-7e9f1c1ab32d",
+        "2cc62c8d-626b-59db-ab36-5819aceb1468"
+      ],
+      "reference_context_ids": [
+        "49b9415f-42bc-5b0c-aacf-7e9f1c1ab32d"
+      ],
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.72,
+      "context_precision": 1.0,
+      "context_recall": 1.0
+    },
+    {
+      "id": "rr-05",
+      "question": "What does a negative dy/dt mean for the ladder?",
+      "reference_answer": "A negative dy/dt means the top of the ladder is moving downward.",
+      "answer": "A negative dy/dt means the top of the ladder is moving downward. [source 1] Differentiating gives 2x dx/dt + 2y dy/dt = 0, so the horizontal and vertical rates are linked. [source 1]",
+      "should_refuse": false,
+      "refused": false,
+      "confidence": 0.4,
+      "expected_source_headings": [
+        "Related Rates Example"
+      ],
+      "retrieved_headings": [
+        "Related Rates Example",
+        "SQL Join Debugging"
+      ],
+      "retrieved_contexts": [
+        "Related Rates Example\nFor a ladder sliding down a wall, use x^2 + y^2 = L^2 where L is constant. Differentiating gives 2x dx/dt + 2y dy/dt = 0, so the horizontal and vertical rates are linked. A negative dy/dt means the top of the ladder is moving downward.",
+        "SQL Join Debugging\nUnexpected duplicate rows often mean the join condition is missing part of a composite key or the relationship is one-to-many. Unexpected missing rows often mean an inner join was used when a left join was needed. Filtering on a right-table column after a left join can accidentally remove NULL unmatched rows."
+      ],
+      "retrieved_context_ids": [
+        "49b9415f-42bc-5b0c-aacf-7e9f1c1ab32d",
+        "a6a35587-2cf2-5573-9ca0-523fefe146fe"
+      ],
+      "reference_context_ids": [
+        "49b9415f-42bc-5b0c-aacf-7e9f1c1ab32d"
+      ],
+      "faithfulness": 1.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 1.0,
+      "context_recall": 1.0
+    },
+    {
+      "id": "rec-01",
+      "question": "What is a recursive Java method?",
+      "reference_answer": "A recursive Java method solves a problem by calling itself on a smaller input.",
+      "answer": "Recursive Java Methods\nA recursive Java method solves a problem by calling itself on a smaller input. [source 1] Every recursive method needs a base case that returns without making another recursive call. [source 1]",
+      "should_refuse": false,
+      "refused": false,
+      "confidence": 1.0,
+      "expected_source_headings": [
+        "Recursive Java Methods"
+      ],
+      "retrieved_headings": [
+        "Recursive Java Methods",
+        "Factorial Recursion",
+        "Newton's Method Interpretation",
+        "Newton's Method"
+      ],
+      "retrieved_contexts": [
+        "Recursive Java Methods\nA recursive Java method solves a problem by calling itself on a smaller input. Every recursive method needs a base case that returns without making another recursive call. The recursive case must move the input toward the base case so the call chain eventually stops. Stack frames store each unfinished call, so deep recursion can cause a stack overflow.",
+        "Factorial Recursion\nThe factorial method can use if (n <= 1) return 1 as its base case. The recursive case returns n * factorial(n - 1), which reduces n by one on each call. For n = 4, the calls evaluate 4 * 3 * 2 * 1 after the base case returns.",
+        "Newton's Method Interpretation\nEach Newton step uses the tangent line at the current estimate. The x-intercept of that tangent line becomes the next estimate. Fast convergence usually happens when the function is smooth and the starting estimate is reasonable.",
+        "Newton's Method\nNewton's method approximates a root of f(x) by repeatedly applying x_next = x - f(x) / f'(x). The initial guess should be close enough to the desired root for the tangent-line approximation to be useful. Stop when the change between iterations is below a tolerance or when the function value is close to zero. If f'(x) is zero or nearly zero, the next step can be unstable."
+      ],
+      "retrieved_context_ids": [
+        "dcde64ac-283e-56b1-b42d-501ba32d7e7d",
+        "0d501d38-c10a-5fe2-b298-0fb305c61bcd",
+        "3a87cabe-e99e-5d91-80ed-8dd717453f5a",
+        "b136700b-a4a0-5d27-b3e9-1086489beab1"
+      ],
+      "reference_context_ids": [
+        "dcde64ac-283e-56b1-b42d-501ba32d7e7d"
+      ],
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.8571428571428571,
+      "context_precision": 1.0,
+      "context_recall": 1.0
+    },
+    {
+      "id": "rec-02",
+      "question": "Why does every recursive method need a base case?",
+      "reference_answer": "The base case returns without making another recursive call.",
+      "answer": "Every recursive method needs a base case that returns without making another recursive call. [source 1] The recursive case must move the input toward the base case so the call chain eventually stops. [source 1]",
+      "should_refuse": false,
+      "refused": false,
+      "confidence": 1.0,
+      "expected_source_headings": [
+        "Recursive Java Methods"
+      ],
+      "retrieved_headings": [
+        "Recursive Java Methods",
+        "Factorial Recursion",
+        "Newton's Method",
+        "SQL Joins"
+      ],
+      "retrieved_contexts": [
+        "Recursive Java Methods\nA recursive Java method solves a problem by calling itself on a smaller input. Every recursive method needs a base case that returns without making another recursive call. The recursive case must move the input toward the base case so the call chain eventually stops. Stack frames store each unfinished call, so deep recursion can cause a stack overflow.",
+        "Factorial Recursion\nThe factorial method can use if (n <= 1) return 1 as its base case. The recursive case returns n * factorial(n - 1), which reduces n by one on each call. For n = 4, the calls evaluate 4 * 3 * 2 * 1 after the base case returns.",
+        "Newton's Method\nNewton's method approximates a root of f(x) by repeatedly applying x_next = x - f(x) / f'(x). The initial guess should be close enough to the desired root for the tangent-line approximation to be useful. Stop when the change between iterations is below a tolerance or when the function value is close to zero. If f'(x) is zero or nearly zero, the next step can be unstable.",
+        "SQL Joins\nAn inner join returns only rows where the join condition matches rows from both tables. A left join returns every row from the left table and fills unmatched right-table columns with NULL. Join conditions usually compare a primary key in one table to a foreign key in another table. Many-to-many relationships are represented with a bridge table that stores pairs of foreign keys."
+      ],
+      "retrieved_context_ids": [
+        "dcde64ac-283e-56b1-b42d-501ba32d7e7d",
+        "0d501d38-c10a-5fe2-b298-0fb305c61bcd",
+        "b136700b-a4a0-5d27-b3e9-1086489beab1",
+        "d3dfad00-a23f-5738-8067-be26a4e4c516"
+      ],
+      "reference_context_ids": [
+        "dcde64ac-283e-56b1-b42d-501ba32d7e7d"
+      ],
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.8,
+      "context_precision": 1.0,
+      "context_recall": 1.0
+    },
+    {
+      "id": "rec-03",
+      "question": "How should the recursive case change the input?",
+      "reference_answer": "The recursive case must move the input toward the base case.",
+      "answer": "The initial guess should be close enough to the desired root for the tangent-line approximation to be useful. [source 4] The recursive case must move the input toward the base case so the call chain eventually stops. [source 1]",
+      "should_refuse": false,
+      "refused": false,
+      "confidence": 1.0,
+      "expected_source_headings": [
+        "Recursive Java Methods"
+      ],
+      "retrieved_headings": [
+        "Recursive Java Methods",
+        "Factorial Recursion",
+        "Related Rates",
+        "Newton's Method"
+      ],
+      "retrieved_contexts": [
+        "Recursive Java Methods\nA recursive Java method solves a problem by calling itself on a smaller input. Every recursive method needs a base case that returns without making another recursive call. The recursive case must move the input toward the base case so the call chain eventually stops. Stack frames store each unfinished call, so deep recursion can cause a stack overflow.",
+        "Factorial Recursion\nThe factorial method can use if (n <= 1) return 1 as its base case. The recursive case returns n * factorial(n - 1), which reduces n by one on each call. For n = 4, the calls evaluate 4 * 3 * 2 * 1 after the base case returns.",
+        "Related Rates\nRelated rates problems connect quantities that change with time. Before differentiating, draw a diagram, label variables, and write an equation that connects the variables. Differentiate both sides of the equation with respect to time, using the chain rule for every quantity that changes. Substitute known values only after differentiating, then solve for the requested rate and include units.",
+        "Newton's Method\nNewton's method approximates a root of f(x) by repeatedly applying x_next = x - f(x) / f'(x). The initial guess should be close enough to the desired root for the tangent-line approximation to be useful. Stop when the change between iterations is below a tolerance or when the function value is close to zero. If f'(x) is zero or nearly zero, the next step can be unstable."
+      ],
+      "retrieved_context_ids": [
+        "dcde64ac-283e-56b1-b42d-501ba32d7e7d",
+        "0d501d38-c10a-5fe2-b298-0fb305c61bcd",
+        "2cc62c8d-626b-59db-ab36-5819aceb1468",
+        "b136700b-a4a0-5d27-b3e9-1086489beab1"
+      ],
+      "reference_context_ids": [
+        "dcde64ac-283e-56b1-b42d-501ba32d7e7d"
+      ],
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.761904761904762,
+      "context_precision": 1.0,
+      "context_recall": 1.0
+    },
+    {
+      "id": "rec-04",
+      "question": "What can happen if recursion is too deep?",
+      "reference_answer": "Deep recursion can cause a stack overflow.",
+      "answer": "Stack frames store each unfinished call, so deep recursion can cause a stack overflow. [source 1] Factorial Recursion\nThe factorial method can use if (n <= 1) return 1 as its base case. [source 2]",
+      "should_refuse": false,
+      "refused": false,
+      "confidence": 0.7,
+      "expected_source_headings": [
+        "Recursive Java Methods"
+      ],
+      "retrieved_headings": [
+        "Recursive Java Methods",
+        "Factorial Recursion",
+        "Newton's Method Interpretation"
+      ],
+      "retrieved_contexts": [
+        "Recursive Java Methods\nA recursive Java method solves a problem by calling itself on a smaller input. Every recursive method needs a base case that returns without making another recursive call. The recursive case must move the input toward the base case so the call chain eventually stops. Stack frames store each unfinished call, so deep recursion can cause a stack overflow.",
+        "Factorial Recursion\nThe factorial method can use if (n <= 1) return 1 as its base case. The recursive case returns n * factorial(n - 1), which reduces n by one on each call. For n = 4, the calls evaluate 4 * 3 * 2 * 1 after the base case returns.",
+        "Newton's Method Interpretation\nEach Newton step uses the tangent line at the current estimate. The x-intercept of that tangent line becomes the next estimate. Fast convergence usually happens when the function is smooth and the starting estimate is reasonable."
+      ],
+      "retrieved_context_ids": [
+        "dcde64ac-283e-56b1-b42d-501ba32d7e7d",
+        "0d501d38-c10a-5fe2-b298-0fb305c61bcd",
+        "3a87cabe-e99e-5d91-80ed-8dd717453f5a"
+      ],
+      "reference_context_ids": [
+        "dcde64ac-283e-56b1-b42d-501ba32d7e7d"
+      ],
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.631578947368421,
+      "context_precision": 1.0,
+      "context_recall": 1.0
+    },
+    {
+      "id": "rec-05",
+      "question": "What base case can factorial recursion use?",
+      "reference_answer": "The factorial method can use if (n <= 1) return 1 as its base case.",
+      "answer": "Factorial Recursion\nThe factorial method can use if (n <= 1) return 1 as its base case. [source 1] Stack frames store each unfinished call, so deep recursion can cause a stack overflow. [source 2]",
+      "should_refuse": false,
+      "refused": false,
+      "confidence": 1.0,
+      "expected_source_headings": [
+        "Factorial Recursion"
+      ],
+      "retrieved_headings": [
+        "Factorial Recursion",
+        "Recursive Java Methods",
+        "SQL Join Debugging",
+        "Related Rates Example"
+      ],
+      "retrieved_contexts": [
+        "Factorial Recursion\nThe factorial method can use if (n <= 1) return 1 as its base case. The recursive case returns n * factorial(n - 1), which reduces n by one on each call. For n = 4, the calls evaluate 4 * 3 * 2 * 1 after the base case returns.",
+        "Recursive Java Methods\nA recursive Java method solves a problem by calling itself on a smaller input. Every recursive method needs a base case that returns without making another recursive call. The recursive case must move the input toward the base case so the call chain eventually stops. Stack frames store each unfinished call, so deep recursion can cause a stack overflow.",
+        "SQL Join Debugging\nUnexpected duplicate rows often mean the join condition is missing part of a composite key or the relationship is one-to-many. Unexpected missing rows often mean an inner join was used when a left join was needed. Filtering on a right-table column after a left join can accidentally remove NULL unmatched rows.",
+        "Related Rates Example\nFor a ladder sliding down a wall, use x^2 + y^2 = L^2 where L is constant. Differentiating gives 2x dx/dt + 2y dy/dt = 0, so the horizontal and vertical rates are linked. A negative dy/dt means the top of the ladder is moving downward."
+      ],
+      "retrieved_context_ids": [
+        "0d501d38-c10a-5fe2-b298-0fb305c61bcd",
+        "dcde64ac-283e-56b1-b42d-501ba32d7e7d",
+        "a6a35587-2cf2-5573-9ca0-523fefe146fe",
+        "49b9415f-42bc-5b0c-aacf-7e9f1c1ab32d"
+      ],
+      "reference_context_ids": [
+        "0d501d38-c10a-5fe2-b298-0fb305c61bcd"
+      ],
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.923076923076923,
+      "context_precision": 1.0,
+      "context_recall": 1.0
+    },
+    {
+      "id": "rec-06",
+      "question": "How does factorial recursion reduce the problem?",
+      "reference_answer": "The recursive case returns n * factorial(n - 1), reducing n by one on each call.",
+      "answer": "Factorial Recursion\nThe factorial method can use if (n <= 1) return 1 as its base case. [source 1] The recursive case returns n * factorial(n - 1), which reduces n by one on each call. [source 1]",
+      "should_refuse": false,
+      "refused": false,
+      "confidence": 0.6,
+      "expected_source_headings": [
+        "Factorial Recursion"
+      ],
+      "retrieved_headings": [
+        "Factorial Recursion",
+        "Recursive Java Methods",
+        "Related Rates"
+      ],
+      "retrieved_contexts": [
+        "Factorial Recursion\nThe factorial method can use if (n <= 1) return 1 as its base case. The recursive case returns n * factorial(n - 1), which reduces n by one on each call. For n = 4, the calls evaluate 4 * 3 * 2 * 1 after the base case returns.",
+        "Recursive Java Methods\nA recursive Java method solves a problem by calling itself on a smaller input. Every recursive method needs a base case that returns without making another recursive call. The recursive case must move the input toward the base case so the call chain eventually stops. Stack frames store each unfinished call, so deep recursion can cause a stack overflow.",
+        "Related Rates\nRelated rates problems connect quantities that change with time. Before differentiating, draw a diagram, label variables, and write an equation that connects the variables. Differentiate both sides of the equation with respect to time, using the chain rule for every quantity that changes. Substitute known values only after differentiating, then solve for the requested rate and include units."
+      ],
+      "retrieved_context_ids": [
+        "0d501d38-c10a-5fe2-b298-0fb305c61bcd",
+        "dcde64ac-283e-56b1-b42d-501ba32d7e7d",
+        "2cc62c8d-626b-59db-ab36-5819aceb1468"
+      ],
+      "reference_context_ids": [
+        "0d501d38-c10a-5fe2-b298-0fb305c61bcd"
+      ],
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.8799999999999999,
+      "context_precision": 1.0,
+      "context_recall": 1.0
+    },
+    {
+      "id": "newton-01",
+      "question": "What formula does Newton's method repeatedly apply?",
+      "reference_answer": "Newton's method applies x_next = x - f(x) / f'(x).",
+      "answer": "Newton's Method\nNewton's method approximates a root of f(x) by repeatedly applying x_next = x - f(x) / f'(x). [source 1] Newton's Method Interpretation\nEach Newton step uses the tangent line at the current estimate. [source 2]",
+      "should_refuse": false,
+      "refused": false,
+      "confidence": 0.6,
+      "expected_source_headings": [
+        "Newton's Method"
+      ],
+      "retrieved_headings": [
+        "Newton's Method",
+        "Newton's Method Interpretation",
+        "Recursive Java Methods",
+        "Factorial Recursion"
+      ],
+      "retrieved_contexts": [
+        "Newton's Method\nNewton's method approximates a root of f(x) by repeatedly applying x_next = x - f(x) / f'(x). The initial guess should be close enough to the desired root for the tangent-line approximation to be useful. Stop when the change between iterations is below a tolerance or when the function value is close to zero. If f'(x) is zero or nearly zero, the next step can be unstable.",
+        "Newton's Method Interpretation\nEach Newton step uses the tangent line at the current estimate. The x-intercept of that tangent line becomes the next estimate. Fast convergence usually happens when the function is smooth and the starting estimate is reasonable.",
+        "Recursive Java Methods\nA recursive Java method solves a problem by calling itself on a smaller input. Every recursive method needs a base case that returns without making another recursive call. The recursive case must move the input toward the base case so the call chain eventually stops. Stack frames store each unfinished call, so deep recursion can cause a stack overflow.",
+        "Factorial Recursion\nThe factorial method can use if (n <= 1) return 1 as its base case. The recursive case returns n * factorial(n - 1), which reduces n by one on each call. For n = 4, the calls evaluate 4 * 3 * 2 * 1 after the base case returns."
+      ],
+      "retrieved_context_ids": [
+        "b136700b-a4a0-5d27-b3e9-1086489beab1",
+        "3a87cabe-e99e-5d91-80ed-8dd717453f5a",
+        "dcde64ac-283e-56b1-b42d-501ba32d7e7d",
+        "0d501d38-c10a-5fe2-b298-0fb305c61bcd"
+      ],
+      "reference_context_ids": [
+        "b136700b-a4a0-5d27-b3e9-1086489beab1"
+      ],
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.6666666666666667,
+      "context_precision": 1.0,
+      "context_recall": 1.0
+    },
+    {
+      "id": "newton-02",
+      "question": "How should I choose the initial guess for Newton's method?",
+      "reference_answer": "The initial guess should be close enough to the desired root for the tangent-line approximation to be useful.",
+      "answer": "The initial guess should be close enough to the desired root for the tangent-line approximation to be useful. [source 1] Newton's Method\nNewton's method approximates a root of f(x) by repeatedly applying x_next = x - f(x) / f'(x). [source 1]",
+      "should_refuse": false,
+      "refused": false,
+      "confidence": 0.6,
+      "expected_source_headings": [
+        "Newton's Method"
+      ],
+      "retrieved_headings": [
+        "Newton's Method",
+        "Newton's Method Interpretation",
+        "Recursive Java Methods",
+        "Factorial Recursion"
+      ],
+      "retrieved_contexts": [
+        "Newton's Method\nNewton's method approximates a root of f(x) by repeatedly applying x_next = x - f(x) / f'(x). The initial guess should be close enough to the desired root for the tangent-line approximation to be useful. Stop when the change between iterations is below a tolerance or when the function value is close to zero. If f'(x) is zero or nearly zero, the next step can be unstable.",
+        "Newton's Method Interpretation\nEach Newton step uses the tangent line at the current estimate. The x-intercept of that tangent line becomes the next estimate. Fast convergence usually happens when the function is smooth and the starting estimate is reasonable.",
+        "Recursive Java Methods\nA recursive Java method solves a problem by calling itself on a smaller input. Every recursive method needs a base case that returns without making another recursive call. The recursive case must move the input toward the base case so the call chain eventually stops. Stack frames store each unfinished call, so deep recursion can cause a stack overflow.",
+        "Factorial Recursion\nThe factorial method can use if (n <= 1) return 1 as its base case. The recursive case returns n * factorial(n - 1), which reduces n by one on each call. For n = 4, the calls evaluate 4 * 3 * 2 * 1 after the base case returns."
+      ],
+      "retrieved_context_ids": [
+        "b136700b-a4a0-5d27-b3e9-1086489beab1",
+        "3a87cabe-e99e-5d91-80ed-8dd717453f5a",
+        "dcde64ac-283e-56b1-b42d-501ba32d7e7d",
+        "0d501d38-c10a-5fe2-b298-0fb305c61bcd"
+      ],
+      "reference_context_ids": [
+        "b136700b-a4a0-5d27-b3e9-1086489beab1"
+      ],
+      "faithfulness": 1.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 1.0,
+      "context_recall": 1.0
+    },
+    {
+      "id": "newton-03",
+      "question": "When should Newton's method stop?",
+      "reference_answer": "Stop when the change between iterations is below a tolerance or when the function value is close to zero.",
+      "answer": "The initial guess should be close enough to the desired root for the tangent-line approximation to be useful. [source 1] Stop when the change between iterations is below a tolerance or when the function value is close to zero. [source 1]",
+      "should_refuse": false,
+      "refused": false,
+      "confidence": 0.5,
+      "expected_source_headings": [
+        "Newton's Method"
+      ],
+      "retrieved_headings": [
+        "Newton's Method",
+        "Recursive Java Methods",
+        "Newton's Method Interpretation",
+        "Factorial Recursion"
+      ],
+      "retrieved_contexts": [
+        "Newton's Method\nNewton's method approximates a root of f(x) by repeatedly applying x_next = x - f(x) / f'(x). The initial guess should be close enough to the desired root for the tangent-line approximation to be useful. Stop when the change between iterations is below a tolerance or when the function value is close to zero. If f'(x) is zero or nearly zero, the next step can be unstable.",
+        "Recursive Java Methods\nA recursive Java method solves a problem by calling itself on a smaller input. Every recursive method needs a base case that returns without making another recursive call. The recursive case must move the input toward the base case so the call chain eventually stops. Stack frames store each unfinished call, so deep recursion can cause a stack overflow.",
+        "Newton's Method Interpretation\nEach Newton step uses the tangent line at the current estimate. The x-intercept of that tangent line becomes the next estimate. Fast convergence usually happens when the function is smooth and the starting estimate is reasonable.",
+        "Factorial Recursion\nThe factorial method can use if (n <= 1) return 1 as its base case. The recursive case returns n * factorial(n - 1), which reduces n by one on each call. For n = 4, the calls evaluate 4 * 3 * 2 * 1 after the base case returns."
+      ],
+      "retrieved_context_ids": [
+        "b136700b-a4a0-5d27-b3e9-1086489beab1",
+        "dcde64ac-283e-56b1-b42d-501ba32d7e7d",
+        "3a87cabe-e99e-5d91-80ed-8dd717453f5a",
+        "0d501d38-c10a-5fe2-b298-0fb305c61bcd"
+      ],
+      "reference_context_ids": [
+        "b136700b-a4a0-5d27-b3e9-1086489beab1"
+      ],
+      "faithfulness": 1.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 1.0,
+      "context_recall": 1.0
+    },
+    {
+      "id": "newton-04",
+      "question": "What happens if f prime of x is zero in Newton's method?",
+      "reference_answer": "If f'(x) is zero or nearly zero, the next step can be unstable.",
+      "answer": "If f'(x) is zero or nearly zero, the next step can be unstable. [source 1] Newton's Method\nNewton's method approximates a root of f(x) by repeatedly applying x_next = x - f(x) / f'(x). [source 1]",
+      "should_refuse": false,
+      "refused": false,
+      "confidence": 1.0,
+      "expected_source_headings": [
+        "Newton's Method"
+      ],
+      "retrieved_headings": [
+        "Newton's Method",
+        "Newton's Method Interpretation",
+        "Recursive Java Methods",
+        "Factorial Recursion"
+      ],
+      "retrieved_contexts": [
+        "Newton's Method\nNewton's method approximates a root of f(x) by repeatedly applying x_next = x - f(x) / f'(x). The initial guess should be close enough to the desired root for the tangent-line approximation to be useful. Stop when the change between iterations is below a tolerance or when the function value is close to zero. If f'(x) is zero or nearly zero, the next step can be unstable.",
+        "Newton's Method Interpretation\nEach Newton step uses the tangent line at the current estimate. The x-intercept of that tangent line becomes the next estimate. Fast convergence usually happens when the function is smooth and the starting estimate is reasonable.",
+        "Recursive Java Methods\nA recursive Java method solves a problem by calling itself on a smaller input. Every recursive method needs a base case that returns without making another recursive call. The recursive case must move the input toward the base case so the call chain eventually stops. Stack frames store each unfinished call, so deep recursion can cause a stack overflow.",
+        "Factorial Recursion\nThe factorial method can use if (n <= 1) return 1 as its base case. The recursive case returns n * factorial(n - 1), which reduces n by one on each call. For n = 4, the calls evaluate 4 * 3 * 2 * 1 after the base case returns."
+      ],
+      "retrieved_context_ids": [
+        "b136700b-a4a0-5d27-b3e9-1086489beab1",
+        "3a87cabe-e99e-5d91-80ed-8dd717453f5a",
+        "dcde64ac-283e-56b1-b42d-501ba32d7e7d",
+        "0d501d38-c10a-5fe2-b298-0fb305c61bcd"
+      ],
+      "reference_context_ids": [
+        "b136700b-a4a0-5d27-b3e9-1086489beab1"
+      ],
+      "faithfulness": 1.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 1.0,
+      "context_recall": 1.0
+    },
+    {
+      "id": "newton-05",
+      "question": "What does each Newton step use geometrically?",
+      "reference_answer": "Each Newton step uses the tangent line at the current estimate.",
+      "answer": "Newton's Method Interpretation\nEach Newton step uses the tangent line at the current estimate. [source 1] Related Rates Example\nFor a ladder sliding down a wall, use x^2 + y^2 = L^2 where L is constant. [source 2]",
+      "should_refuse": false,
+      "refused": false,
+      "confidence": 0.4,
+      "expected_source_headings": [
+        "Newton's Method Interpretation"
+      ],
+      "retrieved_headings": [
+        "Newton's Method Interpretation",
+        "Related Rates Example",
+        "Newton's Method",
+        "Factorial Recursion"
+      ],
+      "retrieved_contexts": [
+        "Newton's Method Interpretation\nEach Newton step uses the tangent line at the current estimate. The x-intercept of that tangent line becomes the next estimate. Fast convergence usually happens when the function is smooth and the starting estimate is reasonable.",
+        "Related Rates Example\nFor a ladder sliding down a wall, use x^2 + y^2 = L^2 where L is constant. Differentiating gives 2x dx/dt + 2y dy/dt = 0, so the horizontal and vertical rates are linked. A negative dy/dt means the top of the ladder is moving downward.",
+        "Newton's Method\nNewton's method approximates a root of f(x) by repeatedly applying x_next = x - f(x) / f'(x). The initial guess should be close enough to the desired root for the tangent-line approximation to be useful. Stop when the change between iterations is below a tolerance or when the function value is close to zero. If f'(x) is zero or nearly zero, the next step can be unstable.",
+        "Factorial Recursion\nThe factorial method can use if (n <= 1) return 1 as its base case. The recursive case returns n * factorial(n - 1), which reduces n by one on each call. For n = 4, the calls evaluate 4 * 3 * 2 * 1 after the base case returns."
+      ],
+      "retrieved_context_ids": [
+        "3a87cabe-e99e-5d91-80ed-8dd717453f5a",
+        "49b9415f-42bc-5b0c-aacf-7e9f1c1ab32d",
+        "b136700b-a4a0-5d27-b3e9-1086489beab1",
+        "0d501d38-c10a-5fe2-b298-0fb305c61bcd"
+      ],
+      "reference_context_ids": [
+        "3a87cabe-e99e-5d91-80ed-8dd717453f5a"
+      ],
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.8421052631578948,
+      "context_precision": 1.0,
+      "context_recall": 1.0
+    },
+    {
+      "id": "sql-01",
+      "question": "What does an inner join return?",
+      "reference_answer": "An inner join returns only rows where the join condition matches rows from both tables.",
+      "answer": "SQL Joins\nAn inner join returns only rows where the join condition matches rows from both tables. [source 1] Unexpected missing rows often mean an inner join was used when a left join was needed. [source 2]",
+      "should_refuse": false,
+      "refused": false,
+      "confidence": 0.8,
+      "expected_source_headings": [
+        "SQL Joins"
+      ],
+      "retrieved_headings": [
+        "SQL Joins",
+        "SQL Join Debugging",
+        "Factorial Recursion",
+        "Recursive Java Methods"
+      ],
+      "retrieved_contexts": [
+        "SQL Joins\nAn inner join returns only rows where the join condition matches rows from both tables. A left join returns every row from the left table and fills unmatched right-table columns with NULL. Join conditions usually compare a primary key in one table to a foreign key in another table. Many-to-many relationships are represented with a bridge table that stores pairs of foreign keys.",
+        "SQL Join Debugging\nUnexpected duplicate rows often mean the join condition is missing part of a composite key or the relationship is one-to-many. Unexpected missing rows often mean an inner join was used when a left join was needed. Filtering on a right-table column after a left join can accidentally remove NULL unmatched rows.",
+        "Factorial Recursion\nThe factorial method can use if (n <= 1) return 1 as its base case. The recursive case returns n * factorial(n - 1), which reduces n by one on each call. For n = 4, the calls evaluate 4 * 3 * 2 * 1 after the base case returns.",
+        "Recursive Java Methods\nA recursive Java method solves a problem by calling itself on a smaller input. Every recursive method needs a base case that returns without making another recursive call. The recursive case must move the input toward the base case so the call chain eventually stops. Stack frames store each unfinished call, so deep recursion can cause a stack overflow."
+      ],
+      "retrieved_context_ids": [
+        "d3dfad00-a23f-5738-8067-be26a4e4c516",
+        "a6a35587-2cf2-5573-9ca0-523fefe146fe",
+        "0d501d38-c10a-5fe2-b298-0fb305c61bcd",
+        "dcde64ac-283e-56b1-b42d-501ba32d7e7d"
+      ],
+      "reference_context_ids": [
+        "d3dfad00-a23f-5738-8067-be26a4e4c516"
+      ],
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.9166666666666666,
+      "context_precision": 1.0,
+      "context_recall": 1.0
+    },
+    {
+      "id": "sql-02",
+      "question": "What does a left join do with unmatched right-table columns?",
+      "reference_answer": "A left join fills unmatched right-table columns with NULL.",
+      "answer": "A left join returns every row from the left table and fills unmatched right-table columns with NULL. [source 1] Filtering on a right-table column after a left join can accidentally remove NULL unmatched rows. [source 2]",
+      "should_refuse": false,
+      "refused": false,
+      "confidence": 1.0,
+      "expected_source_headings": [
+        "SQL Joins"
+      ],
+      "retrieved_headings": [
+        "SQL Joins",
+        "SQL Join Debugging"
+      ],
+      "retrieved_contexts": [
+        "SQL Joins\nAn inner join returns only rows where the join condition matches rows from both tables. A left join returns every row from the left table and fills unmatched right-table columns with NULL. Join conditions usually compare a primary key in one table to a foreign key in another table. Many-to-many relationships are represented with a bridge table that stores pairs of foreign keys.",
+        "SQL Join Debugging\nUnexpected duplicate rows often mean the join condition is missing part of a composite key or the relationship is one-to-many. Unexpected missing rows often mean an inner join was used when a left join was needed. Filtering on a right-table column after a left join can accidentally remove NULL unmatched rows."
+      ],
+      "retrieved_context_ids": [
+        "d3dfad00-a23f-5738-8067-be26a4e4c516",
+        "a6a35587-2cf2-5573-9ca0-523fefe146fe"
+      ],
+      "reference_context_ids": [
+        "d3dfad00-a23f-5738-8067-be26a4e4c516"
+      ],
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.761904761904762,
+      "context_precision": 1.0,
+      "context_recall": 1.0
+    },
+    {
+      "id": "sql-03",
+      "question": "What do join conditions usually compare?",
+      "reference_answer": "Join conditions usually compare a primary key to a foreign key.",
+      "answer": "Join conditions usually compare a primary key in one table to a foreign key in another table. [source 1] SQL Joins\nAn inner join returns only rows where the join condition matches rows from both tables. [source 1]",
+      "should_refuse": false,
+      "refused": false,
+      "confidence": 0.90000004,
+      "expected_source_headings": [
+        "SQL Joins"
+      ],
+      "retrieved_headings": [
+        "SQL Joins",
+        "SQL Join Debugging",
+        "Newton's Method Interpretation"
+      ],
+      "retrieved_contexts": [
+        "SQL Joins\nAn inner join returns only rows where the join condition matches rows from both tables. A left join returns every row from the left table and fills unmatched right-table columns with NULL. Join conditions usually compare a primary key in one table to a foreign key in another table. Many-to-many relationships are represented with a bridge table that stores pairs of foreign keys.",
+        "SQL Join Debugging\nUnexpected duplicate rows often mean the join condition is missing part of a composite key or the relationship is one-to-many. Unexpected missing rows often mean an inner join was used when a left join was needed. Filtering on a right-table column after a left join can accidentally remove NULL unmatched rows.",
+        "Newton's Method Interpretation\nEach Newton step uses the tangent line at the current estimate. The x-intercept of that tangent line becomes the next estimate. Fast convergence usually happens when the function is smooth and the starting estimate is reasonable."
+      ],
+      "retrieved_context_ids": [
+        "d3dfad00-a23f-5738-8067-be26a4e4c516",
+        "a6a35587-2cf2-5573-9ca0-523fefe146fe",
+        "3a87cabe-e99e-5d91-80ed-8dd717453f5a"
+      ],
+      "reference_context_ids": [
+        "d3dfad00-a23f-5738-8067-be26a4e4c516"
+      ],
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.8,
+      "context_precision": 1.0,
+      "context_recall": 1.0
+    },
+    {
+      "id": "sql-04",
+      "question": "How are many-to-many relationships represented?",
+      "reference_answer": "Many-to-many relationships are represented with a bridge table that stores pairs of foreign keys.",
+      "answer": "Many-to-many relationships are represented with a bridge table that stores pairs of foreign keys. [source 1] SQL Join Debugging\nUnexpected duplicate rows often mean the join condition is missing part of a composite key or the relationship is one-to-many. [source 2]",
+      "should_refuse": false,
+      "refused": false,
+      "confidence": 0.4,
+      "expected_source_headings": [
+        "SQL Joins"
+      ],
+      "retrieved_headings": [
+        "SQL Joins",
+        "SQL Join Debugging"
+      ],
+      "retrieved_contexts": [
+        "SQL Joins\nAn inner join returns only rows where the join condition matches rows from both tables. A left join returns every row from the left table and fills unmatched right-table columns with NULL. Join conditions usually compare a primary key in one table to a foreign key in another table. Many-to-many relationships are represented with a bridge table that stores pairs of foreign keys.",
+        "SQL Join Debugging\nUnexpected duplicate rows often mean the join condition is missing part of a composite key or the relationship is one-to-many. Unexpected missing rows often mean an inner join was used when a left join was needed. Filtering on a right-table column after a left join can accidentally remove NULL unmatched rows."
+      ],
+      "retrieved_context_ids": [
+        "d3dfad00-a23f-5738-8067-be26a4e4c516",
+        "a6a35587-2cf2-5573-9ca0-523fefe146fe"
+      ],
+      "reference_context_ids": [
+        "d3dfad00-a23f-5738-8067-be26a4e4c516"
+      ],
+      "faithfulness": 1.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 1.0,
+      "context_recall": 1.0
+    },
+    {
+      "id": "sql-05",
+      "question": "What can cause unexpected duplicate rows in a join?",
+      "reference_answer": "Unexpected duplicate rows often mean the join condition is missing part of a composite key or the relationship is one-to-many.",
+      "answer": "SQL Join Debugging\nUnexpected duplicate rows often mean the join condition is missing part of a composite key or the relationship is one-to-many. [source 1] Stack frames store each unfinished call, so deep recursion can cause a stack overflow. [source 3]",
+      "should_refuse": false,
+      "refused": false,
+      "confidence": 1.0,
+      "expected_source_headings": [
+        "SQL Join Debugging"
+      ],
+      "retrieved_headings": [
+        "SQL Join Debugging",
+        "SQL Joins",
+        "Recursive Java Methods"
+      ],
+      "retrieved_contexts": [
+        "SQL Join Debugging\nUnexpected duplicate rows often mean the join condition is missing part of a composite key or the relationship is one-to-many. Unexpected missing rows often mean an inner join was used when a left join was needed. Filtering on a right-table column after a left join can accidentally remove NULL unmatched rows.",
+        "SQL Joins\nAn inner join returns only rows where the join condition matches rows from both tables. A left join returns every row from the left table and fills unmatched right-table columns with NULL. Join conditions usually compare a primary key in one table to a foreign key in another table. Many-to-many relationships are represented with a bridge table that stores pairs of foreign keys.",
+        "Recursive Java Methods\nA recursive Java method solves a problem by calling itself on a smaller input. Every recursive method needs a base case that returns without making another recursive call. The recursive case must move the input toward the base case so the call chain eventually stops. Stack frames store each unfinished call, so deep recursion can cause a stack overflow."
+      ],
+      "retrieved_context_ids": [
+        "a6a35587-2cf2-5573-9ca0-523fefe146fe",
+        "d3dfad00-a23f-5738-8067-be26a4e4c516",
+        "dcde64ac-283e-56b1-b42d-501ba32d7e7d"
+      ],
+      "reference_context_ids": [
+        "a6a35587-2cf2-5573-9ca0-523fefe146fe"
+      ],
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.9032258064516129,
+      "context_precision": 1.0,
+      "context_recall": 1.0
+    },
+    {
+      "id": "sql-06",
+      "question": "What can accidentally remove NULL unmatched rows after a left join?",
+      "reference_answer": "Filtering on a right-table column after a left join can accidentally remove NULL unmatched rows.",
+      "answer": "Filtering on a right-table column after a left join can accidentally remove NULL unmatched rows. [source 1] A left join returns every row from the left table and fills unmatched right-table columns with NULL. [source 2]",
+      "should_refuse": false,
+      "refused": false,
+      "confidence": 1.0,
+      "expected_source_headings": [
+        "SQL Join Debugging"
+      ],
+      "retrieved_headings": [
+        "SQL Join Debugging",
+        "SQL Joins"
+      ],
+      "retrieved_contexts": [
+        "SQL Join Debugging\nUnexpected duplicate rows often mean the join condition is missing part of a composite key or the relationship is one-to-many. Unexpected missing rows often mean an inner join was used when a left join was needed. Filtering on a right-table column after a left join can accidentally remove NULL unmatched rows.",
+        "SQL Joins\nAn inner join returns only rows where the join condition matches rows from both tables. A left join returns every row from the left table and fills unmatched right-table columns with NULL. Join conditions usually compare a primary key in one table to a foreign key in another table. Many-to-many relationships are represented with a bridge table that stores pairs of foreign keys."
+      ],
+      "retrieved_context_ids": [
+        "a6a35587-2cf2-5573-9ca0-523fefe146fe",
+        "d3dfad00-a23f-5738-8067-be26a4e4c516"
+      ],
+      "reference_context_ids": [
+        "a6a35587-2cf2-5573-9ca0-523fefe146fe"
+      ],
+      "faithfulness": 1.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 1.0,
+      "context_recall": 1.0
+    },
+    {
+      "id": "refusal-01",
+      "question": "What date is the midterm exam?",
+      "reference_answer": "I don't have enough information in your uploaded materials to answer this.",
+      "answer": "I don't have enough information in your uploaded materials to answer this.",
+      "should_refuse": true,
+      "refused": true,
+      "confidence": 0.0,
+      "expected_source_headings": [],
+      "retrieved_headings": [],
+      "retrieved_contexts": [],
+      "retrieved_context_ids": [],
+      "reference_context_ids": [],
+      "faithfulness": 1.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "id": "refusal-02",
+      "question": "What is the professor's attendance policy?",
+      "reference_answer": "I don't have enough information in your uploaded materials to answer this.",
+      "answer": "I don't have enough information in your uploaded materials to answer this.",
+      "should_refuse": true,
+      "refused": true,
+      "confidence": 0.0,
+      "expected_source_headings": [],
+      "retrieved_headings": [],
+      "retrieved_contexts": [],
+      "retrieved_context_ids": [],
+      "reference_context_ids": [],
+      "faithfulness": 1.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "id": "refusal-03",
+      "question": "How does photosynthesis work in plant cells?",
+      "reference_answer": "I don't have enough information in your uploaded materials to answer this.",
+      "answer": "I don't have enough information in your uploaded materials to answer this.",
+      "should_refuse": true,
+      "refused": true,
+      "confidence": 0.0,
+      "expected_source_headings": [],
+      "retrieved_headings": [],
+      "retrieved_contexts": [],
+      "retrieved_context_ids": [],
+      "reference_context_ids": [],
+      "faithfulness": 1.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "id": "refusal-04",
+      "question": "What is the homework late penalty?",
+      "reference_answer": "I don't have enough information in your uploaded materials to answer this.",
+      "answer": "I don't have enough information in your uploaded materials to answer this.",
+      "should_refuse": true,
+      "refused": true,
+      "confidence": 0.0,
+      "expected_source_headings": [],
+      "retrieved_headings": [],
+      "retrieved_contexts": [],
+      "retrieved_context_ids": [],
+      "reference_context_ids": [],
+      "faithfulness": 1.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "id": "synth-01",
+      "question": "Compare related rates and Newton's method: what is one setup step for each?",
+      "reference_answer": "Related rates starts by drawing a diagram, labeling variables, and writing an equation; Newton's method starts with an initial guess close enough to the desired root.",
+      "answer": "Newton's Method Interpretation\nEach Newton step uses the tangent line at the current estimate. [source 3] Related Rates\nRelated rates problems connect quantities that change with time. [source 1]",
+      "should_refuse": false,
+      "refused": false,
+      "confidence": 0.5,
+      "expected_source_headings": [
+        "Related Rates",
+        "Newton's Method"
+      ],
+      "retrieved_headings": [
+        "Related Rates",
+        "Recursive Java Methods",
+        "Newton's Method Interpretation",
+        "Newton's Method"
+      ],
+      "retrieved_contexts": [
+        "Related Rates\nRelated rates problems connect quantities that change with time. Before differentiating, draw a diagram, label variables, and write an equation that connects the variables. Differentiate both sides of the equation with respect to time, using the chain rule for every quantity that changes. Substitute known values only after differentiating, then solve for the requested rate and include units.",
+        "Recursive Java Methods\nA recursive Java method solves a problem by calling itself on a smaller input. Every recursive method needs a base case that returns without making another recursive call. The recursive case must move the input toward the base case so the call chain eventually stops. Stack frames store each unfinished call, so deep recursion can cause a stack overflow.",
+        "Newton's Method Interpretation\nEach Newton step uses the tangent line at the current estimate. The x-intercept of that tangent line becomes the next estimate. Fast convergence usually happens when the function is smooth and the starting estimate is reasonable.",
+        "Newton's Method\nNewton's method approximates a root of f(x) by repeatedly applying x_next = x - f(x) / f'(x). The initial guess should be close enough to the desired root for the tangent-line approximation to be useful. Stop when the change between iterations is below a tolerance or when the function value is close to zero. If f'(x) is zero or nearly zero, the next step can be unstable."
+      ],
+      "retrieved_context_ids": [
+        "2cc62c8d-626b-59db-ab36-5819aceb1468",
+        "dcde64ac-283e-56b1-b42d-501ba32d7e7d",
+        "3a87cabe-e99e-5d91-80ed-8dd717453f5a",
+        "b136700b-a4a0-5d27-b3e9-1086489beab1"
+      ],
+      "reference_context_ids": [
+        "2cc62c8d-626b-59db-ab36-5819aceb1468",
+        "b136700b-a4a0-5d27-b3e9-1086489beab1"
+      ],
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.14814814814814814,
+      "context_precision": 0.75,
+      "context_recall": 1.0
+    },
+    {
+      "id": "synth-02",
+      "question": "How does the factorial example show the general recursive method rule?",
+      "reference_answer": "Recursive methods need a base case and must move toward it; factorial uses if (n <= 1) return 1 and calls factorial(n - 1) to reduce n by one.",
+      "answer": "Differentiate both sides of the equation with respect to time, using the chain rule for every quantity that changes. [source 3] Factorial Recursion\nThe factorial method can use if (n <= 1) return 1 as its base case. [source 2]",
+      "should_refuse": false,
+      "refused": false,
+      "confidence": 0.90000004,
+      "expected_source_headings": [
+        "Recursive Java Methods",
+        "Factorial Recursion"
+      ],
+      "retrieved_headings": [
+        "Recursive Java Methods",
+        "Factorial Recursion",
+        "Related Rates",
+        "Newton's Method"
+      ],
+      "retrieved_contexts": [
+        "Recursive Java Methods\nA recursive Java method solves a problem by calling itself on a smaller input. Every recursive method needs a base case that returns without making another recursive call. The recursive case must move the input toward the base case so the call chain eventually stops. Stack frames store each unfinished call, so deep recursion can cause a stack overflow.",
+        "Factorial Recursion\nThe factorial method can use if (n <= 1) return 1 as its base case. The recursive case returns n * factorial(n - 1), which reduces n by one on each call. For n = 4, the calls evaluate 4 * 3 * 2 * 1 after the base case returns.",
+        "Related Rates\nRelated rates problems connect quantities that change with time. Before differentiating, draw a diagram, label variables, and write an equation that connects the variables. Differentiate both sides of the equation with respect to time, using the chain rule for every quantity that changes. Substitute known values only after differentiating, then solve for the requested rate and include units.",
+        "Newton's Method\nNewton's method approximates a root of f(x) by repeatedly applying x_next = x - f(x) / f'(x). The initial guess should be close enough to the desired root for the tangent-line approximation to be useful. Stop when the change between iterations is below a tolerance or when the function value is close to zero. If f'(x) is zero or nearly zero, the next step can be unstable."
+      ],
+      "retrieved_context_ids": [
+        "dcde64ac-283e-56b1-b42d-501ba32d7e7d",
+        "0d501d38-c10a-5fe2-b298-0fb305c61bcd",
+        "2cc62c8d-626b-59db-ab36-5819aceb1468",
+        "b136700b-a4a0-5d27-b3e9-1086489beab1"
+      ],
+      "reference_context_ids": [
+        "dcde64ac-283e-56b1-b42d-501ba32d7e7d",
+        "0d501d38-c10a-5fe2-b298-0fb305c61bcd"
+      ],
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.5000000000000001,
+      "context_precision": 1.0,
+      "context_recall": 1.0
+    },
+    {
+      "id": "synth-03",
+      "question": "Compare an inner join and a left join.",
+      "reference_answer": "An inner join returns only matching rows from both tables, while a left join returns every row from the left table and fills unmatched right-table columns with NULL.",
+      "answer": "Join conditions usually compare a primary key in one table to a foreign key in another table. [source 1] Unexpected missing rows often mean an inner join was used when a left join was needed. [source 2]",
+      "should_refuse": false,
+      "refused": false,
+      "confidence": 0.90000004,
+      "expected_source_headings": [
+        "SQL Joins"
+      ],
+      "retrieved_headings": [
+        "SQL Joins",
+        "SQL Join Debugging"
+      ],
+      "retrieved_contexts": [
+        "SQL Joins\nAn inner join returns only rows where the join condition matches rows from both tables. A left join returns every row from the left table and fills unmatched right-table columns with NULL. Join conditions usually compare a primary key in one table to a foreign key in another table. Many-to-many relationships are represented with a bridge table that stores pairs of foreign keys.",
+        "SQL Join Debugging\nUnexpected duplicate rows often mean the join condition is missing part of a composite key or the relationship is one-to-many. Unexpected missing rows often mean an inner join was used when a left join was needed. Filtering on a right-table column after a left join can accidentally remove NULL unmatched rows."
+      ],
+      "retrieved_context_ids": [
+        "d3dfad00-a23f-5738-8067-be26a4e4c516",
+        "a6a35587-2cf2-5573-9ca0-523fefe146fe"
+      ],
+      "reference_context_ids": [
+        "d3dfad00-a23f-5738-8067-be26a4e4c516"
+      ],
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.30303030303030304,
+      "context_precision": 1.0,
+      "context_recall": 1.0
+    },
+    {
+      "id": "synth-04",
+      "question": "How can join debugging explain missing rows after using a left join?",
+      "reference_answer": "A left join preserves left-table rows with NULL values for unmatched right-table columns, but filtering on a right-table column afterward can remove those NULL unmatched rows.",
+      "answer": "Filtering on a right-table column after a left join can accidentally remove NULL unmatched rows. [source 1] SQL Join Debugging\nUnexpected duplicate rows often mean the join condition is missing part of a composite key or the relationship is one-to-many. [source 1]",
+      "should_refuse": false,
+      "refused": false,
+      "confidence": 1.0,
+      "expected_source_headings": [
+        "SQL Joins",
+        "SQL Join Debugging"
+      ],
+      "retrieved_headings": [
+        "SQL Join Debugging",
+        "SQL Joins"
+      ],
+      "retrieved_contexts": [
+        "SQL Join Debugging\nUnexpected duplicate rows often mean the join condition is missing part of a composite key or the relationship is one-to-many. Unexpected missing rows often mean an inner join was used when a left join was needed. Filtering on a right-table column after a left join can accidentally remove NULL unmatched rows.",
+        "SQL Joins\nAn inner join returns only rows where the join condition matches rows from both tables. A left join returns every row from the left table and fills unmatched right-table columns with NULL. Join conditions usually compare a primary key in one table to a foreign key in another table. Many-to-many relationships are represented with a bridge table that stores pairs of foreign keys."
+      ],
+      "retrieved_context_ids": [
+        "a6a35587-2cf2-5573-9ca0-523fefe146fe",
+        "d3dfad00-a23f-5738-8067-be26a4e4c516"
+      ],
+      "reference_context_ids": [
+        "d3dfad00-a23f-5738-8067-be26a4e4c516",
+        "a6a35587-2cf2-5573-9ca0-523fefe146fe"
+      ],
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.5945945945945945,
+      "context_precision": 1.0,
+      "context_recall": 1.0
+    },
+    {
+      "id": "synth-05",
+      "question": "What do related rates and Newton's method both do with equations involving changing values?",
+      "reference_answer": "Related rates differentiates an equation connecting changing variables with respect to time, while Newton's method repeatedly applies an update formula using f(x) and f'(x) to approximate a root.",
+      "answer": "Differentiate both sides of the equation with respect to time, using the chain rule for every quantity that changes. [source 1] Substitute known values only after differentiating, then solve for the requested rate and include units. [source 1]",
+      "should_refuse": false,
+      "refused": false,
+      "confidence": 1.0,
+      "expected_source_headings": [
+        "Related Rates",
+        "Newton's Method"
+      ],
+      "retrieved_headings": [
+        "Related Rates",
+        "Newton's Method",
+        "Newton's Method Interpretation",
+        "Related Rates Example"
+      ],
+      "retrieved_contexts": [
+        "Related Rates\nRelated rates problems connect quantities that change with time. Before differentiating, draw a diagram, label variables, and write an equation that connects the variables. Differentiate both sides of the equation with respect to time, using the chain rule for every quantity that changes. Substitute known values only after differentiating, then solve for the requested rate and include units.",
+        "Newton's Method\nNewton's method approximates a root of f(x) by repeatedly applying x_next = x - f(x) / f'(x). The initial guess should be close enough to the desired root for the tangent-line approximation to be useful. Stop when the change between iterations is below a tolerance or when the function value is close to zero. If f'(x) is zero or nearly zero, the next step can be unstable.",
+        "Newton's Method Interpretation\nEach Newton step uses the tangent line at the current estimate. The x-intercept of that tangent line becomes the next estimate. Fast convergence usually happens when the function is smooth and the starting estimate is reasonable.",
+        "Related Rates Example\nFor a ladder sliding down a wall, use x^2 + y^2 = L^2 where L is constant. Differentiating gives 2x dx/dt + 2y dy/dt = 0, so the horizontal and vertical rates are linked. A negative dy/dt means the top of the ladder is moving downward."
+      ],
+      "retrieved_context_ids": [
+        "2cc62c8d-626b-59db-ab36-5819aceb1468",
+        "b136700b-a4a0-5d27-b3e9-1086489beab1",
+        "3a87cabe-e99e-5d91-80ed-8dd717453f5a",
+        "49b9415f-42bc-5b0c-aacf-7e9f1c1ab32d"
+      ],
+      "reference_context_ids": [
+        "2cc62c8d-626b-59db-ab36-5819aceb1468",
+        "b136700b-a4a0-5d27-b3e9-1086489beab1"
+      ],
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.1818181818181818,
+      "context_precision": 1.0,
+      "context_recall": 1.0
+    },
+    {
+      "id": "synth-06",
+      "question": "Compare the stopping idea in recursion with the stopping idea in Newton's method.",
+      "reference_answer": "Recursion stops when a base case returns without another recursive call, while Newton's method stops when iteration change is below a tolerance or the function value is close to zero.",
+      "answer": "Newton's Method\nNewton's method approximates a root of f(x) by repeatedly applying x_next = x - f(x) / f'(x). [source 1] Newton's Method Interpretation\nEach Newton step uses the tangent line at the current estimate. [source 3]",
+      "should_refuse": false,
+      "refused": false,
+      "confidence": 0.5,
+      "expected_source_headings": [
+        "Recursive Java Methods",
+        "Newton's Method"
+      ],
+      "retrieved_headings": [
+        "Newton's Method",
+        "Recursive Java Methods",
+        "Newton's Method Interpretation",
+        "Factorial Recursion"
+      ],
+      "retrieved_contexts": [
+        "Newton's Method\nNewton's method approximates a root of f(x) by repeatedly applying x_next = x - f(x) / f'(x). The initial guess should be close enough to the desired root for the tangent-line approximation to be useful. Stop when the change between iterations is below a tolerance or when the function value is close to zero. If f'(x) is zero or nearly zero, the next step can be unstable.",
+        "Recursive Java Methods\nA recursive Java method solves a problem by calling itself on a smaller input. Every recursive method needs a base case that returns without making another recursive call. The recursive case must move the input toward the base case so the call chain eventually stops. Stack frames store each unfinished call, so deep recursion can cause a stack overflow.",
+        "Newton's Method Interpretation\nEach Newton step uses the tangent line at the current estimate. The x-intercept of that tangent line becomes the next estimate. Fast convergence usually happens when the function is smooth and the starting estimate is reasonable.",
+        "Factorial Recursion\nThe factorial method can use if (n <= 1) return 1 as its base case. The recursive case returns n * factorial(n - 1), which reduces n by one on each call. For n = 4, the calls evaluate 4 * 3 * 2 * 1 after the base case returns."
+      ],
+      "retrieved_context_ids": [
+        "b136700b-a4a0-5d27-b3e9-1086489beab1",
+        "dcde64ac-283e-56b1-b42d-501ba32d7e7d",
+        "3a87cabe-e99e-5d91-80ed-8dd717453f5a",
+        "0d501d38-c10a-5fe2-b298-0fb305c61bcd"
+      ],
+      "reference_context_ids": [
+        "dcde64ac-283e-56b1-b42d-501ba32d7e7d",
+        "b136700b-a4a0-5d27-b3e9-1086489beab1"
+      ],
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.125,
+      "context_precision": 1.0,
+      "context_recall": 1.0
+    }
+  ]
+}

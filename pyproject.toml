@@ -1,0 +1,55 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "studyrag-core"
+version = "0.1.0"
+description = "Standalone RAG core for a course-grounded AI tutor."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.optional-dependencies]
+api = [
+    "fastapi>=0.115",
+    "email-validator>=2.2",
+    "httpx>=0.28",
+    "openai>=1.55",
+    "passlib>=1.7",
+    "PyJWT>=2.10",
+    "python-multipart>=0.0.20",
+    "slowapi>=0.1.9",
+    "uvicorn>=0.30",
+]
+db = [
+    "alembic>=1.13",
+    "pgvector>=0.3",
+    "psycopg[binary]>=3.2",
+    "SQLAlchemy>=2.0",
+]
+docx = ["python-docx>=1.1"]
+eval = [
+    "datasets>=3.0",
+    "langchain-community==0.3.31",
+    "langchain-openai>=0.2",
+    "ragas>=0.2",
+]
+llm = ["openai>=1.55"]
+ingestion = [
+    "boto3>=1.35",
+    "fastapi>=0.115",
+    "pypdf>=4.0",
+    "python-docx>=1.1",
+    "python-multipart>=0.0.20",
+]
+local-models = ["sentence-transformers>=3.0"]
+pdf = ["pypdf>=4.0"]
+test = ["pytest>=8.0"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

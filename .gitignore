@@ -1,0 +1,17 @@
+__pycache__/
+*.py[cod]
+node_modules/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+.studyrag_storage/
+dist/
+build/
+*.log
+*.tsbuildinfo
+*.egg-info/

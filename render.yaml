@@ -1,0 +1,61 @@
+services:
+  - type: web
+    name: studyrag-api
+    env: docker
+    plan: starter
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /health
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: studyrag-postgres
+          property: connectionString
+      - key: JWT_SECRET
+        generateValue: true
+      - key: STUDYRAG_RETRIEVAL_TOP_K
+        value: "4"
+      - key: STUDYRAG_MESSAGE_RATE_LIMIT
+        value: 30/minute
+      - key: STUDYRAG_CORS_ORIGINS
+        sync: false
+      - key: STUDYRAG_STORAGE_BACKEND
+        value: r2
+      - key: S3_BUCKET
+        sync: false
+      - key: S3_REGION
+        value: auto
+      - key: S3_ENDPOINT_URL
+        sync: false
+      - key: S3_ACCESS_KEY_ID
+        sync: false
+      - key: S3_SECRET_ACCESS_KEY
+        sync: false
+      - key: S3_PUBLIC_BASE_URL
+        sync: false
+      - key: LLM_API_KEY
+        sync: false
+      - key: LLM_MODEL
+        sync: false
+      - key: LLM_BASE_URL
+        sync: false
+      - key: RAGAS_EVALUATOR_API_KEY
+        sync: false
+      - key: RAGAS_EVALUATOR_MODEL
+        sync: false
+      - key: RAGAS_EVALUATOR_BASE_URL
+        sync: false
+      - key: RAGAS_EVALUATOR_EMBEDDING_MODEL
+        value: text-embedding-3-small
+      - key: STUDYRAG_DEMO_ENABLED
+        value: "true"
+      - key: STUDYRAG_DEMO_USER_EMAIL
+        value: demo@studyrag.local
+      - key: STUDYRAG_SEED_SAMPLE_COURSE_ON_STARTUP
+        value: "true"
+      - key: STUDYRAG_ATTACH_SAMPLE_COURSE_ON_REGISTER
+        value: "true"
+
+databases:
+  - name: studyrag-postgres
+    databaseName: studyrag
+    user: studyrag
