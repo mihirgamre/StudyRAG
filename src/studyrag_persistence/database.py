@@ -22,7 +22,9 @@ def create_engine_from_url(url: str | None = None, *, echo: bool = False) -> Eng
 
 def normalize_database_url(url: str) -> str:
     if url.startswith("postgres://"):
-        return "postgresql://" + url.removeprefix("postgres://")
+        url = "postgresql://" + url.removeprefix("postgres://")
+    if url.startswith("postgresql://"):
+        return "postgresql+psycopg://" + url.removeprefix("postgresql://")
     return url
 
 

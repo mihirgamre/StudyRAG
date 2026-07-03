@@ -13,6 +13,7 @@ try:
 
     from studyrag_core import HashingEmbeddingModel, PageText
     from studyrag_persistence import Base, PostgresHybridRetriever, persist_document_chunks
+    from studyrag_persistence.database import normalize_database_url
     from studyrag_persistence.models import CourseRecord, DocumentRecord, UserRecord
 
     IMPORT_ERROR = None
@@ -106,6 +107,22 @@ class PostgresPersistenceTests(unittest.TestCase):
             self.assertGreater(cs_hits[0].vector_score, 0.0)
             self.assertGreater(cs_hits[0].keyword_score, 0.0)
             self.assertTrue(all(hit.chunk.course_id == str(cs.id) for hit in cs_hits))
+
+
+class DatabaseUrlTests(unittest.TestCase):
+    def test_normalizes_platform_postgres_urls_to_installed_psycopg_driver(self) -> None:
+        self.assertEqual(
+            normalize_database_url("postgres://user:pass@host/db?sslmode=require"),
+            "postgresql+psycopg://user:pass@host/db?sslmode=require",
+        )
+        self.assertEqual(
+            normalize_database_url("postgresql://user:pass@host/db?sslmode=require"),
+            "postgresql+psycopg://user:pass@host/db?sslmode=require",
+        )
+        self.assertEqual(
+            normalize_database_url("postgresql+psycopg://user:pass@host/db?sslmode=require"),
+            "postgresql+psycopg://user:pass@host/db?sslmode=require",
+        )
 
 
 if __name__ == "__main__":
