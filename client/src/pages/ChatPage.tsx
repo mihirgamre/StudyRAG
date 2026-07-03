@@ -17,6 +17,8 @@ export function ChatPage({ token, course, onBack }: ChatPageProps) {
   const [streaming, setStreaming] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const streamIdRef = useRef<string | null>(null);
+  const pendingTokenRef = useRef('');
+  const tokenFrameRef = useRef<number | null>(null);
 
   useEffect(() => {
     async function startConversation() {
@@ -26,6 +28,38 @@ export function ChatPage({ token, course, onBack }: ChatPageProps) {
     }
     void startConversation().catch((err) => setError(err instanceof Error ? err.message : 'Could not start chat'));
   }, [course.id, token]);
+
+  useEffect(() => {
+    return () => {
+      if (tokenFrameRef.current !== null) {
+        window.cancelAnimationFrame(tokenFrameRef.current);
+      }
+    };
+  }, []);
+
+  function flushPendingTokens() {
+    const text = pendingTokenRef.current;
+    if (!text) {
+      return;
+    }
+    pendingTokenRef.current = '';
+    setMessages((current) =>
+      current.map((message) =>
+        message.id === streamIdRef.current ? { ...message, content: `${message.content}${text}` } : message,
+      ),
+    );
+  }
+
+  function queueToken(text: string) {
+    pendingTokenRef.current += text;
+    if (tokenFrameRef.current !== null) {
+      return;
+    }
+    tokenFrameRef.current = window.requestAnimationFrame(() => {
+      tokenFrameRef.current = null;
+      flushPendingTokens();
+    });
+  }
 
   async function submit(event: FormEvent) {
     event.preventDefault();
@@ -58,13 +92,10 @@ export function ChatPage({ token, course, onBack }: ChatPageProps) {
     try {
       await api.streamMessage(token, conversation.id, userMessage.content, {
         onToken: (text) => {
-          setMessages((current) =>
-            current.map((message) =>
-              message.id === streamIdRef.current ? { ...message, content: `${message.content}${text}` } : message,
-            ),
-          );
+          queueToken(text);
         },
         onFinal: (payload: StreamFinalPayload) => {
+          flushPendingTokens();
           setMessages((current) =>
             current.map((message) =>
               message.id === streamIdRef.current
@@ -82,6 +113,7 @@ export function ChatPage({ token, course, onBack }: ChatPageProps) {
         },
       });
     } catch (err) {
+      flushPendingTokens();
       const message = err instanceof Error ? err.message : 'Message failed';
       setError(message);
       setMessages((current) =>

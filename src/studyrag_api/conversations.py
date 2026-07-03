@@ -172,6 +172,10 @@ def create_message(
     return StreamingResponse(
         _sse_stream(tutor_response.answer, final_payload),
         media_type="text/event-stream",
+        headers={
+            "Cache-Control": "no-cache",
+            "X-Accel-Buffering": "no",
+        },
     )
 
 
@@ -192,9 +196,15 @@ def _token_chunks(answer: str) -> list[str]:
         return []
     parts = answer.split(" ")
     chunks: list[str] = []
+    current: list[str] = []
     for index, part in enumerate(parts):
         suffix = " " if index < len(parts) - 1 else ""
-        chunks.append(part + suffix)
+        current.append(part + suffix)
+        if len(current) >= 4 or sum(len(piece) for piece in current) >= 96:
+            chunks.append("".join(current))
+            current = []
+    if current:
+        chunks.append("".join(current))
     return chunks
 
 
